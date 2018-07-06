@@ -9,6 +9,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { configureStore } from './app/store/configureStore'
 import ScrollToTop from './app/common/util/scrollToTop'
 
+require('dotenv').config()
+
 const store = configureStore();
 
 ReactDOM.render(

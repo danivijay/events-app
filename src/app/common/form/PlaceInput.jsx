@@ -18,12 +18,11 @@ class PlaceInput extends Component {
     handleScriptLoaded = () => this.setState({scriptLoaded: true})
 
     render() {
-        const API_KEY = "" // CLEARKEY
         const {input, width, onSelect, placeholder, options, meta: {touched, error}} = this.props
         return (
             <Form.Field error={touched && !!error} width={width} >
             <Script 
-                url={`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`}
+                url={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_URL}&libraries=places`}
                 onLoad={this.handleScriptLoaded}
             />
             {this.state.scriptLoaded && 

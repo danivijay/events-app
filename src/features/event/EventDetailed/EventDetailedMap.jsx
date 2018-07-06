@@ -5,7 +5,6 @@ import GoogleMapReact from 'google-map-react'
 const Marker = () => <Icon name="marker" size="big" color="red" />
 
 const EventDetailedMap = ({lat, lng}) => {
-    const API_KEY = "" // CLEARKEY
 
     const center = [lat, lng]
     const zoom = 14
@@ -13,7 +12,7 @@ const EventDetailedMap = ({lat, lng}) => {
         <Segment attached='bottom' style={{padding: 0}} >
             <div style={{ height: '300px', width: '100%' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: API_KEY }}
+                    bootstrapURLKeys={{ key: process.env.REACT_APP_API_URL }}
                     defaultCenter={center}
                     defaultZoom={zoom}
                 >

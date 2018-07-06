@@ -109,12 +109,11 @@ class EventForm extends Component {
     handleScriptLoaded = () => this.setState({scriptLoaded: true})
 
     render() {
-        const API_KEY = "" // CLEARKEY
         const {invalid, submitting, pristine} = this.props
         return (
             <Grid>
                 <Script 
-                    url={`https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`}
+                    url={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_URL}&libraries=places`}
                     onLoad={this.handleScriptLoaded}
                 />
                 <Grid.Column width={10} >
